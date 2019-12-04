@@ -1,0 +1,9 @@
+Distance was 107cm
+Temp=24.2*C  Humidity=54.6
+
+Distance was 29cm
+Temp=24.2*C  Humidity=54.6%
+
+Distance was 11cm
+Temp=24.2*C  Humidity=54.3%
+

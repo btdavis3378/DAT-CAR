@@ -1,0 +1,56 @@
+<html>
+<head>
+     <!-- <meta http-equiv="refresh" content = "1"/>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body style="background-color:#ccccff">
+
+<img src="{{ url_for('video_feed') }}" width="50%">
+<div style="float:right; margin-right:10px;">
+
+</div>
+<div style=" height:400px; width:300px; float:right;">
+<center>
+<h1 syle="font-size:50px"><span style="color:#03017a;">DAT</span><span style="color:#01948d"> CAR</span></h1>
+<h1 style="font-size:40px">Data Collection RC Car</h1><br><br>
+<a href="#" id="up" style="font-size:30px;text-decoration:none;">  &#x1F881;&#x1F881;<br>Forward</a><br><br></center>
+<a href="#" id="left" style="font-size:30px;text-decoration:none;"> &#x1F880;&#x1F880;Left</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#" id="right" style="font-size:30px; text-decoration:none;"> Right &#x1F882;&#x1F882;</a><br><br>
+<center><a href="#" id="down" style="font-size:30px;text-decoration:none;"> Backward<br> &#x1F883;&#x1F883;</a></center>
+<center><a href="#" id="showData" style="font-size:35px;text-decoration:none;" onclick="window.location.reload()">Collect Data<br></a></center>
+<center><a href="#" id="saveData" style="font-size:35px;text-decoration:none;">Save Data<br></a></center>
+<center style="font-size:30px">Distance: {{ dist }}cm</center>
+<center style="font-size:30px">{{ temp }}</center>
+</div>
+
+<script>
+$( document ).ready(function(){
+    $("#down").on("mousedown", function() {
+     $.get('/go_backward');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#up").on("mousedown", function() {
+     $.get('/go_forward');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#left").on("mousedown", function() {
+     $.get('/turn_left');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#right").on("mousedown", function() {
+     $.get('/turn_right');
+     }).on('mouseup', function() {
+     $.get('/stop');
+    });
+    $("#saveData").on("click", function() {
+     $.get('/save_data');
+     });
+});
+</script>
+
+</body>
+</html>
