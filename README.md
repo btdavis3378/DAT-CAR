@@ -5,15 +5,24 @@
 ### Project Objective
 Collection and Visualization of Environmental Data with DAT CAR Rover
 
-### Software Used
+### Software/Languages/Tools/Hardware Utilized
 1. Raspberry Pi 3 B+ with Raspbian
-2. Python3
-3. HTML
-4. JavaScript
-5. Flask
-6. ownCloud
-7. Apache
+2. Python3 (main script)
+3. HTML (for webpage w/ Flask)
+4. JavaScript (routing Python functions)
+5. Flask (micro web framework)
+6. ownCloud (Cloud service)
+7. Apache2 (for ownCloud)
 8. PhP
+9. Ultrasonic Sensor
+10. DHT22 (Temp. & Humidity sensor)
+11. Pi Camera
+12. Portable battery
+13. Smart Car Chassis
+14. DC Motors
+15. Motor Module
+16. Jumper Wires/Cables/10k olm resistor
+17. 9v Battery
 
 ### Purpose
 This was a project done in my Networks course at Florida Gulf Coast University during Fall 2019. After the project was finished, the next semester, Spring 2020, the project assignment was to maintain/improve the project.
