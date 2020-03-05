@@ -5,6 +5,7 @@ from camera_pi import Camera
 import RPi.GPIO as GPIO
 import time
 import Adafruit_DHT
+import owncloud
 
 app = Flask(__name__)
 
@@ -45,10 +46,9 @@ print ("Done with RC Controls & Sensors")
 a=1
 @app.route("/")
 def index():
-    #acquire sensor data and render template
     findDistance()
     findTempHumi()
-    return render_template('testWeb.html', dist=distance, temp=tempHumi)
+    return render_template('webPage.html', dist=distance, temp=tempHumi)
 
 #functions to define the movement of the car    
 @app.route('/turn_left')
@@ -123,28 +123,34 @@ def findDistance():
    print ("Distance:",distance,"cm")
 
    return 'true'
- 
-#function to calculate temperature and humidity data 
+   
 def findTempHumi():
    humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
    global tempHumi
    tempHumi = "Temp={0:0.1f}*C  Humidity={1:0.1f}%\n".format(temperature, humidity)
    return 'true'
-
-#function to append sensor data into a text file   
+   
+def saveToCloud():
+   oc = owncloud.Client('http://192.168.1.66/owncloud')
+   oc.login('btdavis3378', 'rwv3ygeb')
+   oc.put_file('testdir/remotefile.txt', 'saved data.txt')
+   link_info = oc.share_file_with_link('testdir/remotefile.txt')
+   print ("Here is your link: " + link_info.get_link())
+   
 @app.route('/save_data')
 def saveSensorData():
    findTempHumi()
    findDistance()
-   f = open("saved data.txt", "a+")
+   f = open("/home/pi/Documents/DATCAR/saved data.txt", "a+")
    f.write("Distance was %d" % distance + "cm\n")
    f.write(tempHumi + "\n")
    f.close()
+   saveToCloud()
    return 'true'
-   
    
 #Generate a camera object from Camera import   
 def gen(camera):
+    """Video streaming generator function."""
     while True:
         frame = camera.get_frame()
         yield (b'--frame\r\n'
@@ -153,6 +159,7 @@ def gen(camera):
 #Stream the video to the html file
 @app.route('/video_feed')
 def video_feed():
+    """Video streaming route. Put this in the src attribute of an img tag."""
     return Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
