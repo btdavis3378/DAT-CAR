@@ -25,7 +25,7 @@ Collection and Visualization of Environmental Data with DAT CAR Rover
 17. 9v Battery
 
 ### Purpose
-This was a project done in my Networks course at Florida Gulf Coast University during Fall 2019. After the project was finished, the next semester, Spring 2020, the project assignment was to maintain/improve the project.
+This was a project done in my Networks course at Florida Gulf Coast University during Fall 2019. After the project was finished, the next semester, Spring 2020, the project assignment was to maintain/improve it.
 
 ### Current Functionality
 DAT CAR is currently able to set up a webserver with Flask to allow a user to control the rover from a computer's web browser. Addtionally, DAT CAR is equipped with a Pi Camera, to allow the user to see where it is going. With Python, the rover can move forwards, backwards, left, and right. DAT CAR is able to collect environment data such as:  distance of an object in front of it, temperature, and humidity of the surrounding area.
