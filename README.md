@@ -36,4 +36,4 @@ This following link is a demonstration video of DAT CAR after the Fall 2019 seme
 
 ### Documentation
 I will be adding more documentation to the code as the journey with this project continues.
-<br/> The .doc file is the report and documentation for this project
+<br/> The .doc file is the report and documentation for this project during the Networks course during Fall 2019.
