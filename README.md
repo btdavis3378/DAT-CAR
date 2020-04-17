@@ -1,6 +1,6 @@
 # DAT CAR
 
-## Data Accumulation Through a Car Altering Remote
+## Data Acquisition Through a Car Altering Remote
 
 ### Project Objective
 Collection and Visualization of Environmental Data with DAT CAR Rover
