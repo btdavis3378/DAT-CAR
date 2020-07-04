@@ -1,0 +1,38 @@
+Distance was 96cm
+Temp=23.3*C  Humidity=54.0%
+
+Distance was 110cm
+Temp=23.2*C  Humidity=55.4%
+
+Distance was 192cm
+Temp=23.7*C  Humidity=54.2%
+
+Distance was 197cm
+Temp=23.7*C  Humidity=54.2%
+
+Distance was 36cm
+Temp=22.8*C  Humidity=57.4%
+
+Distance was 12cm
+Temp=22.9*C  Humidity=57.1%
+
+Fri Apr 17 08:22:38 2020
+Distance was 11cm
+Temp=23.0*C  Humidity=58.0%
+
+Fri Apr 17 08:22:49 2020
+Distance was 226cm
+Temp=23.0*C  Humidity=57.7%
+
+Fri Apr 17 08:25:47 2020
+Distance was 225cm
+Temp=23.2*C  Humidity=58.3%
+
+Fri Apr 17 09:50:30 2020
+Distance was 225cm
+Temp=23.5*C  Humidity=56.8%
+
+Fri Apr 17 11:46:35 2020
+Distance was 57cm
+Temp=26.5*C  Humidity=75.8%
+
